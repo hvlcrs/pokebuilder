@@ -90,14 +90,14 @@ async def main():
     create_collection("cards")
 
     # Crawl the regulations
-    regulations = open(project_root.joinpath("crawls/urls/regulations/urls.txt"), "r")
+    regulations = open(project_root.joinpath("crawl/urls/regulations/urls.txt"), "r")
     for line in regulations:
         markdown_content = await crawl(line)
         sections = split_markdown_content(markdown_content)
         insert_data_unchunked(sections, "regulations")
 
     # Crawl the tactical decks
-    tactical_decks = open(project_root.joinpath("crawls/urls/tactical_decks/urls.txt"), "r")
+    tactical_decks = open(project_root.joinpath("crawl/urls/tactical_decks/urls.txt"), "r")
     for line in tactical_decks:
         markdown_content = await crawl(line)
         insert_data_unchunked(markdown_content, "cards")
