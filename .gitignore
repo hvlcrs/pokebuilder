@@ -1,1 +1,3 @@
-/pokebuilder
+.venv
+.env
+__pycache__
