@@ -75,34 +75,3 @@ def user_prompt(query):
     """
 
     return user_prompt
-
-
-# def main():
-#     query_text = "Build a deck with PikachuEX and CharizardEX as the main cards with 2 energy type cards"
-#     prompt = query(query_text)
-
-#     model = "gemini-2.0-flash"
-#     contents = [
-#         types.Content(
-#             role="user",
-#             parts=[
-#                 types.Part.from_text(text=prompt[1]),
-#             ],
-#         ),
-#     ]
-#     generate_content_config = types.GenerateContentConfig(
-#         response_mime_type="text/plain",
-#         system_instruction=[
-#             types.Part.from_text(text=prompt[0]),
-#         ],
-#     )
-
-#     for chunk in gemini_client.models.generate_content_stream(
-#         model=model,
-#         contents=contents,
-#         config=generate_content_config,
-#     ):
-#         print(chunk.text, end="")
-
-# if __name__ == "__main__":
-#     main()
